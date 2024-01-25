@@ -1,0 +1,24 @@
+class Solution {
+    public boolean checkIfExist(int[] arr) {
+        int i=0,j=arr.length-1;
+        int f=0;
+        while(i<j)
+        {
+            
+            if(arr[i]==2*arr[j] || 2*arr[i]==arr[j])
+            {
+                
+                return true;
+            }
+            j--;
+            if(i==j) 
+            {
+                i++;
+                j=arr.length-1;
+            }
+            
+        }
+        return false;
+        
+    }
+}
