@@ -1,0 +1,21 @@
+import java.io.*;
+import java.lang.*;
+import java.math.*;
+class Solution 
+{
+    public String multiply(String num1, String num2) 
+    {  
+        BigInteger num3=new BigInteger(num1);
+        BigInteger num4=new BigInteger(num2);
+        BigInteger res=num3.multiply(num4);
+        
+        return res.toString();
+        /*
+        int a=Integer.ParseInt(num1);
+        int b=Integer.parseInt(num2);
+        int c=a*b;
+        String d=Integer.toString(c);
+        return d; 
+        */
+    }
+}
