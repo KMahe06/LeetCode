@@ -2,7 +2,7 @@ class Solution {
     public int removeDuplicates(int[] arr) {
         int l = 1;
         int r = 1;
-        while (r < arr.length) {
+        while (r < arr.length) { 
             if (arr[r] != arr[r - 1]) {
                 arr[l++] = arr[r];
             }
