@@ -1,6 +1,6 @@
 class Solution {
     public boolean isPalindrome(int x) {
-           int rn=0,y=0;
+           int rn=0,y=0; 
            int tp=x;
             while(tp>0){
 
