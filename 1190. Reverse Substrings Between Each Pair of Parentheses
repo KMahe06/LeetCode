@@ -1,0 +1,51 @@
+/*
+You are given a string s that consists of lower case English letters and brackets.
+
+Reverse the strings in each pair of matching parentheses, starting from the innermost one.
+
+Your result should not contain any brackets.
+
+ 
+
+Example 1:
+
+Input: s = "(abcd)"
+Output: "dcba"
+Example 2:
+
+Input: s = "(u(love)i)"
+Output: "iloveu"
+Explanation: The substring "love" is reversed first, then the whole string is reversed.
+*/
+
+
+
+class Solution {
+    public String reverseParentheses(String s) {
+        return helper(s, new int[]{0});
+    }
+
+    private String helper(String s, int[] index) {
+        StringBuilder sb = new StringBuilder();
+        
+    
+        while (index[0] < s.length()) {
+            char c = s.charAt(index[0]); 
+            
+            if (c == ')') {
+                
+                index[0]++; 
+                return sb.reverse().toString();  
+            } else if (c == '(') {
+                
+                index[0]++;  
+                sb.append(helper(s, index));  
+            } else {
+                sb.append(c);
+                index[0]++; 
+            }
+        }
+        
+        return sb.toString();
+    }
+}
